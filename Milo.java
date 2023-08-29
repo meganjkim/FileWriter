@@ -16,8 +16,20 @@ public class Milo {
         br.close();
         return s;
     }
+    public static int countCharacters (String fileName) throws IOException
+    {
+        int count = 0;
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        while (br.ready())
+        {
+            br.read();
+            count++;
+        }
+        return count;
+    }
     public static void main(String[] args) throws IOException {
         // writeToFile("milo","milo.txt");
         System.out.println(readFromFile ("milo.txt"));
+        System.out.println(countCharacters("milo.txt"));
     }
 }
